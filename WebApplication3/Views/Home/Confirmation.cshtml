@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Confirmation Page";
+
+}
+<h3>Current Information:</h3>
+<p>Welcome, @ViewBag.newuser.FirstName</p>
+<p>
+    Last Name: @ViewBag.newuser.LastName <br />
+    Email: @ViewBag.newuser.UserEmail <br />
+    Password: @ViewBag.newuser.Password <br />
+    Gender: @ViewBag.newuser.Gender <br />
+    Class: @ViewBag.newuser.UserClass <br />
+</p>
+<form action="Welcome">
+    <input type="button" name="confirmationButton" value="Confirm RSVP" onclick="alert('Registration confirmed!')" />
+    <input type="submit" name="confirmationButton" value="Cancel and Go Back"  />
+</form>

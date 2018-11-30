@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>RSVP to Our Company-Wide Holiday Party!</h1>
+
+<form class="formclass" id="attendchoiceid">
+    <!-- your info here-->
+    <p>First Name:</p>
+    <input type="text" name="firstname" required />
+    <p>Last Name:</p>
+    <input type="text" name="lastname" required />
+    <p>Email:</p>
+    <input type="email" name="useremail" required />
+    <p>Will you be attending?</p> <!-- Attendance choice: SHOW/HIDE guest choice & food choice -->
+    <input type="radio" name="attendance" value="true" id="attendanceyes" onclick="showGuestChoiceFoodChoiceFunction()" /> Yes, I'm attending.  <br />
+    <input type="radio" name="attendance" value="false" id="attendanceno" onclick="hideGuestChoiceFoodChoiceFunction()" /> No, I won't be attending. <br />
+</form>
+
+<form class="hiddenformclass" id="datechoice" display="none">
+    <!--datechoiceinput-->
+    <h3>What date will you be attending?</h3>
+    <input type="radio" name="date" value="true" id="date1" /> December 5th at 7pm
+    <input type="radio" name="date" value="false" id="date2" /> December 6th at 7pm<br />
+</form>
+
+<form class="hiddenformclass" id="guestchoice" display="none">
+    <!-- Will you be bringing a guest? SHOW/HIDE guest input -->
+    <h3>Will you be bringing a guest?</h3>
+    <input type="radio" name="guest" value="true" id="attendanceyes" onclick="showGuestNameFunction()" /> Yes, I'm bringing a guest.
+    <input type="radio" name="guest" value="false" id="attendanceno" onclick="hideGuestNameFunction()" checked /> No, I won't be bringing a guest. <br />
+</form>
+
+<form class="hiddenformclass" id="guestnameinput" display="none">
+    <!-- guest name input -->
+    <p>Guest First Name:</p>
+    <input type="text" value="" name="guestfirstname" />
+    <p>Guest Last Name:</p>
+    <input type="text" value="" name="guestlastname" />
+</form>
+
+<form class="hiddenformclass" id="dishchoice" display="none">
+    <!-- Choice: Will you bring a dish? SHOW/HIDE dish input -->
+    <h3>Will you be bringing a dish to pass?</h3>
+    <input type="radio" name="foodchoice" value="true" id="foodyes" onclick="showFoodDescriptionFunction()" /> Yes, I'm bringing a dish.
+    <input type="radio" name="foodchoice" value="false" id="foodno" onclick="hideFoodDescriptionFunction()" checked /> No, I won't be bringing a dish. <br />
+</form>
+
+<form class="hiddenformclass" id="dishdecriptioninput" display="none">
+    <!-- dish description input -->
+    <p>Name of dish:</p>
+    <input type="text" value="" name="dishname" />
+    <p>Short dish description:</p>
+    <input type="text" value="" name="dishdescription" />
+    <p>Dish Features:</p>
+    <input type="checkbox" name="dishfeature" value="Gluten Free" /> Gluten Free
+    <input type="checkbox" name="dishfeature" value="Vegetarian" /> Vegetarian
+    <input type="checkbox" name="dishfeature" value="Vegan" /> Vegan
+</form>
+
+<input type="button" value="Submit" onclick="submitAllForms()" />
